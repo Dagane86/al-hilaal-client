@@ -20,7 +20,7 @@ const LoginPage = () => {
       if (res.data.success) {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('user', JSON.stringify(res.data.user));
-        window.location.href = '/dashboard';
+        window.location.href = '/Dashboard';
       }
     } catch (err) {
       setError(err.response?.data?.message || 'Username ama Password waa khalad!');
