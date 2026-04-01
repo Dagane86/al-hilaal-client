@@ -11,7 +11,7 @@ import {
   Filter
 } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://alhilaal-system-server.onrender.com/api';
 
 const AttendanceView = () => {
   const [report, setReport] = useState([]);

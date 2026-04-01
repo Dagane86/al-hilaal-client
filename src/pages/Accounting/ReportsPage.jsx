@@ -9,7 +9,7 @@ import {
   Wallet
 } from 'lucide-react';
 
-const API = 'http://localhost:5000';
+const API = 'https://alhilaal-system-server.onrender.com';
 
 const Reports = () => {
   const [payments, setPayments] = useState([]);

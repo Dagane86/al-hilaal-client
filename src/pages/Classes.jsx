@@ -7,7 +7,7 @@ const Classes = () => {
     const [newClass, setNewClass] = useState({ class_name: '', teacher_id: '', shift: 'Morning', capacity: 0 });
     const [editingId, setEditingId] = useState(null);
 
-    const API_URL = 'http://localhost:5000/api';
+    const API_URL = 'https://alhilaal-system-server.onrender.com/api';
 
     const fetchData = async () => {
         try {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Save, Users, CheckCircle, XCircle, Loader2 } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://alhilaal-system-server.onrender.com/api';
 
 const Attendance = () => {
   const [classes, setClasses] = useState([]);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Students = ({ editingId, onSuccess }) => {
-    const API_URL = 'http://localhost:5000/api';
+    const API_URL = 'https://alhilaal-system-server.onrender.com/api';
     const today = new Date().toISOString().split('T')[0];
 
     // State-ka lagu kaydinayo fasallada ka imaanaya DB
@@ -25,7 +25,7 @@ const Students = ({ editingId, onSuccess }) => {
     useEffect(() => {
         const fetchClasses = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/classes');
+                const res = await axios.get('https://alhilaal-system-server.onrender.com/api/classes');
                 setClasses(res.data);
             } catch (err) {
                 console.error("Fasallada lama soo saari karo:", err);
@@ -40,7 +40,7 @@ const Students = ({ editingId, onSuccess }) => {
 
         const fetchStudentDetail = async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/api/students/${editingId}`);
+                const res = await axios.get(`https://alhilaal-system-server.onrender.com/api/students/${editingId}`);
                 const s = res.data;
                 setFormData({
                     full_name: s.full_name || '',
@@ -74,10 +74,10 @@ const Students = ({ editingId, onSuccess }) => {
 
         try {
             if (editingId) {
-                await axios.put(`http://localhost:5000/api/students/${editingId}`, dataToSubmit);
+                await axios.put(`https://alhilaal-system-server.onrender.com/api/students/${editingId}`, dataToSubmit);
                 alert("✅ Xogta ardayga waa la cusboonaysiiyay!");
             } else {
-                const res = await axios.post('http://localhost:5000/api/students', dataToSubmit);
+                const res = await axios.post('https://alhilaal-system-server.onrender.com/api/students', dataToSubmit);
                 alert("✅ " + res.data.message);
             }
 

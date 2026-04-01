@@ -10,7 +10,7 @@ const StudentList = () => {
     // 1. Soo qaado xogta ardayda
     const fetchStudents = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/students');
+            const res = await axios.get('https://alhilaal-system-server.onrender.com/api/students');
             setStudents(res.data);
         } catch (err) {
             console.error("Khalad ayaa dhacay:", err);
@@ -28,7 +28,7 @@ const StudentList = () => {
     const handleDelete = async (id) => {
         if (window.confirm("Ma hubtaa inaad tirtirto ardaygan?")) {
             try {
-                await axios.delete(`http://localhost:5000/api/students/${id}`);
+                await axios.delete(`https://alhilaal-system-server.onrender.com/api/students/${id}`);
                 fetchStudents();
             } catch (err) {
                 console.error(err);

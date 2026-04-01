@@ -17,7 +17,7 @@ const Teachers = ({ editingId, onSuccess }) => {
 
         const fetchTeacherDetail = async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/api/teachers/${editingId}`);
+                const res = await axios.get(`https://alhilaal-system-server.onrender.com/api/teachers/${editingId}`);
                 const data = res.data;
                 setFormData({
                     full_name: data.full_name,
@@ -39,11 +39,11 @@ const Teachers = ({ editingId, onSuccess }) => {
         try {
             if (editingId) {
                 // UPDATE (Beddel)
-                await axios.put(`http://localhost:5000/api/teachers/${editingId}`, formData);
+                await axios.put(`https://alhilaal-system-server.onrender.com/api/teachers/${editingId}`, formData);
                 alert("✅ Isbeddelka waa la kaydiyay!");
             } else {
                 // POST (Diiwaangeli)
-                await axios.post('http://localhost:5000/api/teachers', formData);
+                await axios.post('https://alhilaal-system-server.onrender.com/api/teachers', formData);
                 alert("✅ Macallin cusub waa la daray!");
             }
             onSuccess(); // Xir modal-ka dibna u raaci liiska (fetch)
