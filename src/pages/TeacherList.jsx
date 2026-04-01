@@ -41,7 +41,7 @@ const TeacherList = () => {
     return (
         <div className="p-6 font-arabic text-right" dir="rtl">
             {/* Qaybta Sare iyo Badhanka Pop-up-ka */}
-            <div className="flex justify-between items-center mb-6">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
                 <h2 className="text-2xl font-bold text-[#1e3a8a] border-r-4 border-[#c27803] pr-3">إدارة المعلمين</h2>
                 <button 
                     onClick={() => { setEditId(null); setShowModal(true); }} 
@@ -76,8 +76,8 @@ const TeacherList = () => {
             )}
 
             {/* Table-ka oo leh Edit iyo Delete */}
-            <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
-                <table className="w-full text-center border-collapse">
+            <div className="bg-white rounded-xl shadow-md overflow-x-auto border border-gray-100">
+                <table className="min-w-[680px] w-full text-center border-collapse">
                     <thead className="bg-gray-50 text-[#1e3a8a]">
                         <tr>
                             <th className="p-4 border-b">الاسم</th>

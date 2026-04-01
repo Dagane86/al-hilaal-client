@@ -24,7 +24,7 @@ function AppLayout() {
   const isLogin = location.pathname === '/login';
 
   return (
-    <div className={`flex min-h-screen bg-[#f8fafc] ${isLogin ? 'justify-center items-center' : ''}`} dir="rtl">
+    <div className={`responsive-body flex min-h-screen bg-[#f8fafc] ${isLogin ? 'justify-center items-center' : ''}`} dir="rtl">
       {!isLogin && <Sidebar />}
 
         {/* 📱 MAIN CONTENT */}

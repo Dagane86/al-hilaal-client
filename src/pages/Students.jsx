@@ -94,7 +94,7 @@ const Students = ({ editingId, onSuccess }) => {
                 {editingId ? "تعديل بيانات الطالب" : "تسجيل طالب جديد"}
             </h1>
             
-            <form onSubmit={handleSubmit} className="bg-white grid grid-cols-2 gap-5 text-sm">
+            <form onSubmit={handleSubmit} className="bg-white grid grid-cols-1 md:grid-cols-2 gap-5 text-sm">
                 
                 <div className="col-span-2">
                     <label className="block mb-1 font-bold text-gray-600 italic">الاسم الكامل (Magaca Buuxa)</label>

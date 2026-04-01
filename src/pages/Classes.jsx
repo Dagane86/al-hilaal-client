@@ -41,11 +41,11 @@ const Classes = () => {
     };
 
     return (
-        <div className="p-8 text-right bg-gray-50 min-h-screen" dir="rtl">
+        <div className="p-4 md:p-8 text-right bg-gray-50 min-h-screen" dir="rtl">
             <h1 className="text-2xl font-bold mb-6">Maareynta Fasallada</h1>
             
             {/* Form */}
-            <form onSubmit={handleSave} className="bg-white p-6 rounded-xl shadow-sm grid grid-cols-5 gap-4 mb-8">
+            <form onSubmit={handleSave} className="bg-white p-6 rounded-xl shadow-sm grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
                 <input className="border p-2 rounded-lg" placeholder="Magaca" value={newClass.class_name} onChange={e => setNewClass({...newClass, class_name: e.target.value})} required />
                 <select className="border p-2 rounded-lg" value={newClass.teacher_id} onChange={e => setNewClass({...newClass, teacher_id: e.target.value})} required>
                     <option value="">Dooro Macallin</option>
@@ -60,8 +60,8 @@ const Classes = () => {
             </form>
 
             {/* Table */}
-            <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-                <table className="w-full text-right">
+            <div className="bg-white rounded-xl shadow-sm overflow-x-auto">
+                <table className="min-w-[600px] w-full text-right">
                     <thead className="bg-gray-100">
                         <tr>
                             <th className="p-4">Fasalka</th>
