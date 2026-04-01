@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { User, Lock, Eye, EyeOff, LogIn, Loader2, AlertCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -8,7 +9,7 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-
+const navigate = useNavigate();
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -20,7 +21,7 @@ const LoginPage = () => {
       if (res.data.success) {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('user', JSON.stringify(res.data.user));
-        window.location.href = '/Dashboard';
+        navigate('/dashboard');
       }
     } catch (err) {
       setError(err.response?.data?.message || 'Username ama Password waa khalad!');
